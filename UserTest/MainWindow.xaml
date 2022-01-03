@@ -1,0 +1,24 @@
+﻿<Window x:Class="UserTest.UserRepository"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="add_user" Content="Добавить пользователя" HorizontalAlignment="Left" Margin="46,258,0,0" VerticalAlignment="Top" Width="147" Height="35" Click="add_user_Click"/>
+        <Button x:Name="find_id" Content="Найти пользователя по ID" HorizontalAlignment="Left" Margin="330,267,0,0" VerticalAlignment="Top" Width="151" Height="35"/>
+        <Button x:Name="display_list" Content="Отобразить список пользователей" HorizontalAlignment="Left" Margin="330,331,0,0" VerticalAlignment="Top" Width="179" Height="35" Click="display_list_Click"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="36,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="36,148,0,0" VerticalAlignment="Top"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="36,176,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="id_txt" HorizontalAlignment="Left" Height="23" Margin="107,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="name_txt" HorizontalAlignment="Left" Height="23" Margin="107,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="sername_txt" HorizontalAlignment="Left" Height="23" Margin="107,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="userdatagrid" HorizontalAlignment="Left" Height="140" Margin="276,88,0,0" VerticalAlignment="Top" Width="379"/>
+        <TextBox x:Name="find_id_txt" HorizontalAlignment="Left" Height="35" Margin="289,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+        <Button x:Name="clear_user" Content="Очистить поля" HorizontalAlignment="Left" Margin="46,310,0,0" VerticalAlignment="Top" Width="147" Height="33" Click="clear_user_Click"/>
+
+    </Grid>
+</Window>
