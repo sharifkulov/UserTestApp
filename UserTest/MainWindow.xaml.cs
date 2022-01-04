@@ -32,7 +32,7 @@ namespace UserTest
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("select * from [User]", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [User]", conn);
                 DataTable dt = new DataTable();
                 conn.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -72,6 +72,31 @@ namespace UserTest
         }
         public void GetUser()
         {
+            if (find_id_txt.Text.Length == 0)
+            {
+                GetOrderedUsers();
+            }
+            else
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM [User] WHERE id IN (@ID)", conn);
+                    DataTable dt = new DataTable();
+                    dt.Clear();
+                    conn.Open();                  
+                    cmd.Parameters.AddWithValue("@ID", find_id_txt.Text);
+                    dt.Load(cmd.ExecuteReader());
+                    conn.Close();
+                    userdatagrid.ItemsSource = dt.DefaultView;
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    MessageBox.Show("Ошибка поиска. Error: " + ex.Message);
+                }
+
+
+            }
 
         }
         public void ClearData()
@@ -79,6 +104,7 @@ namespace UserTest
             id_txt.Clear();
             name_txt.Clear();
             sername_txt.Clear();
+            find_id_txt.Clear();
         }
 
         private void add_user_Click(object sender, RoutedEventArgs e)
@@ -94,6 +120,11 @@ namespace UserTest
         private void clear_user_Click(object sender, RoutedEventArgs e)
         {
             ClearData();
+        }
+
+        private void find_id_Click(object sender, RoutedEventArgs e)
+        {
+            GetUser();
         }
     }    
 }

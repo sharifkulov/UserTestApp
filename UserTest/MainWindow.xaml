@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="add_user" Content="Добавить пользователя" HorizontalAlignment="Left" Margin="46,258,0,0" VerticalAlignment="Top" Width="147" Height="35" Click="add_user_Click"/>
-        <Button x:Name="find_id" Content="Найти пользователя по ID" HorizontalAlignment="Left" Margin="330,267,0,0" VerticalAlignment="Top" Width="151" Height="35"/>
+        <Button x:Name="find_id" Content="Найти пользователя по ID" HorizontalAlignment="Left" Margin="330,267,0,0" VerticalAlignment="Top" Width="151" Height="35" Click="find_id_Click"/>
         <Button x:Name="display_list" Content="Отобразить список пользователей" HorizontalAlignment="Left" Margin="330,331,0,0" VerticalAlignment="Top" Width="179" Height="35" Click="display_list_Click"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="36,120,0,0" VerticalAlignment="Top"/>
         <Label Content="Имя" HorizontalAlignment="Left" Margin="36,148,0,0" VerticalAlignment="Top"/>
